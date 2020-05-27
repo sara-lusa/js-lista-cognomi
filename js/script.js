@@ -4,7 +4,7 @@ var listaCognomi = ['BIANCHI', 'ROSSI', 'DUZIONI', 'BALSANO', 'VERDI'];
 // Chiedo all'utente il cognome
 do {
   var cognomeUtente = prompt('Scrivi il tuo cognome.');
-} while ( !(isNaN(cognomeUtente)) && cognomeUtente.length == 0 )
+} while ( !(isNaN(parseInt(cognomeUtente))) || cognomeUtente.length == 0 )
 
 var cognomeUtenteMaiuscolo = cognomeUtente.toUpperCase();
 listaCognomi.push(cognomeUtenteMaiuscolo);
