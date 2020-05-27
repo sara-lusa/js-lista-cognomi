@@ -1,10 +1,13 @@
 // Lista Cognomi
-var listaCognomi = ['Bianchi', 'Rossi', 'Duzioni', 'Balsano', 'Verdi'];
+var listaCognomi = ['BIANCHI', 'ROSSI', 'DUZIONI', 'BALSANO', 'VERDI'];
 
 // Chiedo all'utente il cognome
-var cognomeUtente = prompt('Scrivi il tuo cognome.');
-// var cognomeUtenteMaiuscolo = cognomeUtente.toUpperCase();
-listaCognomi.push(cognomeUtente);
+do {
+  var cognomeUtente = prompt('Scrivi il tuo cognome.');
+} while ( !(isNaN(cognomeUtente)) && cognomeUtente.length == 0 )
+
+var cognomeUtenteMaiuscolo = cognomeUtente.toUpperCase();
+listaCognomi.push(cognomeUtenteMaiuscolo);
 
 // Ordino i cognomi in base alla iniziale
 listaCognomi.sort();
@@ -21,5 +24,5 @@ while (i < listaCognomi.length) {
 }
 
 // Dico all'utente in che posizione della lista si trova
-var posizione = listaCognomi.indexOf(cognomeUtente);
+var posizione = listaCognomi.indexOf(cognomeUtenteMaiuscolo);
 document.getElementById('posizione').innerHTML = posizione + 1;
